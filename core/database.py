@@ -161,26 +161,38 @@ def _generate_id(prefix: str = "") -> str:
 def resolve_db_path(db_path: Optional[Union[str, Path]] = None) -> Union[str, Path]:
     """Resolve the target SQLite database path from parameter or application config."""
     if db_path is not None:
+        if str(db_path) == ":memory:":
+            return ":memory:"
         return db_path
     cfg = get_config()
-    return cfg.database_path
+    raw_path = cfg.database_path
+    if str(raw_path) == ":memory:":
+        return ":memory:"
+    return raw_path
 
 
 def create_connection(db_path: Optional[Union[str, Path]] = None) -> sqlite3.Connection:
     """Create and configure a raw SQLite connection with foreign keys and row factory enabled."""
     target_path = resolve_db_path(db_path)
+    is_memory = str(target_path) == ":memory:" or (
+        isinstance(target_path, str) and "mode=memory" in target_path
+    )
 
-    # Ensure parent directory exists for file-based paths
-    if isinstance(target_path, Path) or (isinstance(target_path, str) and target_path != ":memory:"):
+    if not is_memory:
         path_obj = Path(target_path)
         path_obj.parent.mkdir(parents=True, exist_ok=True)
         conn = sqlite3.connect(str(path_obj))
+        conn.row_factory = sqlite3.Row
+        conn.execute("PRAGMA foreign_keys = ON;")
+        conn.execute("PRAGMA journal_mode = WAL;")
     else:
-        conn = sqlite3.connect(":memory:")
+        conn = sqlite3.connect(
+            target_path if isinstance(target_path, str) else ":memory:",
+            check_same_thread=False,
+        )
+        conn.row_factory = sqlite3.Row
+        conn.execute("PRAGMA foreign_keys = ON;")
 
-    conn.row_factory = sqlite3.Row
-    conn.execute("PRAGMA foreign_keys = ON;")
-    conn.execute("PRAGMA journal_mode = WAL;")
     return conn
 
 
@@ -848,6 +860,15 @@ class DatabaseManager:
             )
             return cursor.rowcount
 
+    def delete_knowledge_documents_by_business(self, business_id: str) -> int:
+        """Delete all knowledge documents for a given business (used during full rebuild)."""
+        with self._conn() as conn:
+            cursor = conn.execute(
+                "DELETE FROM knowledge_documents WHERE business_id = ?",
+                (business_id,),
+            )
+            return cursor.rowcount
+
     def get_knowledge_documents_by_business(
         self, business_id: str
     ) -> List[KnowledgeDocument]:
@@ -918,6 +939,23 @@ class DatabaseManager:
 
         with self._conn() as conn:
             row = conn.execute(query, params).fetchone()
+            if not row:
+                return None
+            return Conversation.model_validate(dict(row))
+
+    def get_conversation_by_session(
+        self, business_id: str, session_id: str
+    ) -> Optional[Conversation]:
+        """Retrieve a conversation for a specific business and session_id."""
+        with self._conn() as conn:
+            row = conn.execute(
+                """
+                SELECT * FROM conversations
+                WHERE business_id = ? AND session_id = ?
+                ORDER BY created_at DESC LIMIT 1
+                """,
+                (business_id, session_id),
+            ).fetchone()
             if not row:
                 return None
             return Conversation.model_validate(dict(row))

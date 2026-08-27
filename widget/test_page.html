@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UrbanThreads — Contemporary Streetwear & Casuals</title>
+  <style>
+    :root {
+      --primary: #111827;
+      --accent: #4F46E5;
+      --bg: #F9FAFB;
+      --card-bg: #FFFFFF;
+      --text: #1F2937;
+      --text-muted: #6B7280;
+      --border: #E5E7EB;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .announcement {
+      background: var(--primary);
+      color: #F9FAFB;
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--primary);
+    }
+    nav a {
+      margin-left: 24px;
+      color: #4B5563;
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    .hero {
+      max-width: 1100px;
+      margin: 30px auto 40px auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 14px;
+      letter-spacing: -0.8px;
+    }
+    .hero p {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 24px auto;
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 20px;
+      text-align: left;
+      max-width: 1100px;
+      margin: 0 auto 20px auto;
+      padding: 0 20px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto 60px auto;
+      padding: 0 20px;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 22px;
+      text-align: left;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: #EEF2FF;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 10px;
+      width: fit-content;
+    }
+    .badge.final-sale {
+      background: #FEF2F2;
+      color: #DC2626;
+    }
+    .card h3 {
+      font-size: 17px;
+      margin-bottom: 6px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+    .card .details {
+      font-size: 12px;
+      color: #9CA3AF;
+      margin-bottom: 12px;
+    }
+    .card .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #F3F4F6;
+      padding-top: 12px;
+    }
+    .card .price {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .policies-section {
+      background: #ffffff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 50px 20px;
+      margin-bottom: 50px;
+    }
+    .policies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .policy-item {
+      padding: 16px;
+    }
+    .policy-item h4 {
+      font-size: 15px;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .policy-item p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+      color: #9CA3AF;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announcement">
+    🚀 Free Shipping on all domestic orders above ₹1,499 • 7-Day Hassle-Free Returns
+  </div>
+
+  <header>
+    <div class="logo">UrbanThreads</div>
+    <nav>
+      <a href="#products">Featured Collection</a>
+      <a href="#policies">Shipping & Returns</a>
+      <a href="#support">Customer Support</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Contemporary Streetwear & Casuals</h1>
+      <p>Heavyweight hoodies, structured flight bomber jackets, and relaxed oversized tees built for modern street culture.</p>
+    </section>
+
+    <h2 class="section-title" id="products">Featured Products</h2>
+    <section class="product-grid">
+      <div class="card">
+        <div>
+          <span class="badge">Hoodies</span>
+          <h3>Oversized Black Hoodie</h3>
+          <p>400 GSM heavyweight premium cotton fleece with drop-shoulder silhouette and double-stitched ribbed cuffs.</p>
+          <div class="details">Sizes: S, M, L, XL, XXL • Color: Washed Black</div>
+        </div>
+        <div class="price-row">
+          <span class="price">₹1,499</span>
+          <span style="font-size: 12px; color: #10B981; font-weight: 600;">In Stock</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="badge">Hoodies</span>
+          <h3>Premium Oversized Hoodie</h3>
+          <p>Ultra-heavyweight 450 GSM luxury brushed fleece tailored with a structured hood and kangaroo pocket.</p>
+          <div class="details">Sizes: M, L, XL • Colors: Washed Grey, Olive</div>
+        </div>
+        <div class="price-row">
+          <span class="price">₹2,299</span>
+          <span style="font-size: 12px; color: #10B981; font-weight: 600;">In Stock</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="badge">Jackets</span>
+          <h3>Bomber Jacket</h3>
+          <p>Water-resistant urban flight jacket with nylon shell, quilted satin orange lining, and heavy-duty brass zipper.</p>
+          <div class="details">Sizes: S, M, L, XL • Colors: Olive Green, Black</div>
+        </div>
+        <div class="price-row">
+          <span class="price">₹2,499</span>
+          <span style="font-size: 12px; color: #10B981; font-weight: 600;">In Stock</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="badge final-sale">Final Sale</span>
+          <h3>Limited Edition Graphic Tee</h3>
+          <p>240 GSM single-run custom typography graphic tee. Pre-shrunk 100% combed cotton. Non-returnable.</p>
+          <div class="details">Sizes: S, M, L, XL • Color: Off-White</div>
+        </div>
+        <div class="price-row">
+          <span class="price">₹999</span>
+          <span style="font-size: 12px; color: #EF4444; font-weight: 600;">Final Sale</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="policies-section" id="policies">
+      <div class="policies-grid">
+        <div class="policy-item">
+          <h4>📦 Shipping Policy</h4>
+          <p>Standard delivery takes 3–5 business days. Free shipping on all orders above ₹1,499 across India.</p>
+        </div>
+        <div class="policy-item">
+          <h4>🔄 Returns Policy</h4>
+          <p>Returns accepted within 7 days of delivery for unworn items with original tags. Final sale items excluded.</p>
+        </div>
+        <div class="policy-item">
+          <h4>💳 Payment Methods</h4>
+          <p>We support UPI, Credit/Debit Cards, Net Banking, and Cash on Delivery (COD) for eligible pin codes.</p>
+        </div>
+        <div class="policy-item">
+          <h4>📏 Sizing Assistance</h4>
+          <p>Our tops feature a relaxed, slightly oversized boxy cut. Ask our AI Assistant for exact dimensions!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="support">
+    <p>© 2026 UrbanThreads Inc. • Mumbai, India • support@urbanthreads.example.com</p>
+  </footer>
+
+  <!-- ============================================================= -->
+  <!-- SupportBot AI Embed Widget Integration                        -->
+  <!-- ============================================================= -->
+  <script
+      src="embed.js"
+      data-business-id="urbanthreads_001"
+      data-api-url="http://localhost:8000/api/chat"
+      data-title="UrbanThreads Assistant"
+      data-welcome-message="Hi there! 👋 Welcome to UrbanThreads. Ask me about products, sizing, shipping, or returns!"
+      data-primary-color="#111827"
+      data-position="bottom-right">
+  </script>
+
+</body>
+</html>

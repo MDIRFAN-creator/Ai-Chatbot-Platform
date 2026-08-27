@@ -1,0 +1,80 @@
+[
+  {
+    "product_id": "prod_ut_001",
+    "name": "Oversized Black Hoodie",
+    "description": "400 GSM heavyweight premium French terry cotton hoodie with double-stitched cuffs, kangaroo pocket, and relaxed streetwear drop shoulders.",
+    "price": 1499.0,
+    "currency": "INR",
+    "category": "Hoodies",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Midnight Black", "Charcoal Grey"],
+    "availability": "in_stock",
+    "returnable": true,
+    "product_url": "https://urbanthreads.example.com/products/oversized-black-hoodie"
+  },
+  {
+    "product_id": "prod_ut_002",
+    "name": "Premium Oversized Hoodie",
+    "description": "Luxury 450 GSM brushed fleece hoodie featuring a double-lined structured hood, seamless ribbed hem, and custom minimalist UrbanThreads chest embroidery.",
+    "price": 2299.0,
+    "currency": "INR",
+    "category": "Hoodies",
+    "sizes": ["M", "L", "XL", "XXL"],
+    "colors": ["Sage Green", "Washed Navy", "Heather Grey"],
+    "availability": "in_stock",
+    "returnable": true,
+    "product_url": "https://urbanthreads.example.com/products/premium-oversized-hoodie"
+  },
+  {
+    "product_id": "prod_ut_003",
+    "name": "Bomber Jacket",
+    "description": "Water-resistant matte nylon flight jacket with orange contrast quilted lining, utility arm zip pocket, and heavy-duty metal hardware.",
+    "price": 2499.0,
+    "currency": "INR",
+    "category": "Jackets",
+    "sizes": ["M", "L", "XL"],
+    "colors": ["Military Olive", "Stealth Black"],
+    "availability": "in_stock",
+    "returnable": true,
+    "product_url": "https://urbanthreads.example.com/products/bomber-jacket"
+  },
+  {
+    "product_id": "prod_ut_004",
+    "name": "Limited Edition Graphic Tee",
+    "description": "240 GSM single-run collectible custom artwork streetwear tee with vintage distressed wash. Limited production run — Final Sale item.",
+    "price": 999.0,
+    "currency": "INR",
+    "category": "T-Shirts",
+    "sizes": ["S", "M", "L"],
+    "colors": ["Vintage Off-White", "Acid Wash Black"],
+    "availability": "in_stock",
+    "returnable": false,
+    "product_url": "https://urbanthreads.example.com/products/limited-graphic-tee"
+  },
+  {
+    "product_id": "prod_ut_005",
+    "name": "Classic Heavyweight Tee",
+    "description": "100% combed organic ring-spun cotton everyday boxy t-shirt with reinforced crew neck collar.",
+    "price": 799.0,
+    "currency": "INR",
+    "category": "T-Shirts",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Pure White", "Jet Black", "Oatmeal Melange", "Washed Navy"],
+    "availability": "in_stock",
+    "returnable": true,
+    "product_url": "https://urbanthreads.example.com/products/classic-heavyweight-tee"
+  },
+  {
+    "product_id": "prod_ut_006",
+    "name": "Urban Cargo Pants",
+    "description": "Durable cotton twill utility cargo pants with 6 functional pockets, articulated knees, and adjustable drawstring ankle cuffs.",
+    "price": 1899.0,
+    "currency": "INR",
+    "category": "Bottoms",
+    "sizes": ["30", "32", "34", "36"],
+    "colors": ["Desert Khaki", "Army Green", "Pitch Black"],
+    "availability": "in_stock",
+    "returnable": true,
+    "product_url": "https://urbanthreads.example.com/products/urban-cargo-pants"
+  }
+]

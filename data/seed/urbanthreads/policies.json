@@ -1,0 +1,22 @@
+[
+  {
+    "policy_type": "shipping",
+    "content": "UrbanThreads offers reliable nationwide shipping across India. Standard domestic delivery takes 3-5 business days. Express delivery takes 1-2 business days for select metro areas. Free standard shipping is automatically applied on all orders of ₹1,499 and above. Orders below ₹1,499 carry a flat delivery fee of ₹99. Real-time SMS and email tracking links are dispatched as soon as the order leaves our Mumbai warehouse."
+  },
+  {
+    "policy_type": "returns",
+    "content": "We offer a 7-day hassle-free return window starting from the date of package delivery. To qualify for a return or exchange, items must be unworn, unwashed, in their original condition with all brand tags, barcodes, and packaging intact. Limited Edition apparel, socks, underwear, and promotional Final Sale items are strictly non-returnable."
+  },
+  {
+    "policy_type": "refunds",
+    "content": "Once your returned item arrives at our warehouse and passes quality inspection (usually within 48 hours), refunds are processed within 5-7 business days. For prepaid orders (UPI/Card/NetBanking), refunds are credited back to the original payment source. For Cash on Delivery (COD) orders, a secure payout link is sent via SMS/email for instant UPI or direct NEFT bank transfer."
+  },
+  {
+    "policy_type": "payment",
+    "content": "We support 100% secure payment gateways. We accept UPI (Google Pay, PhonePe, Paytm, BHIM), Credit and Debit Cards (Visa, MasterCard, RuPay, American Express), Net Banking across 50+ Indian banks, and Cash on Delivery (COD) for pin codes where logistics partners support cash handling."
+  },
+  {
+    "policy_type": "sizing",
+    "content": "All UrbanThreads tops and hoodies follow a contemporary relaxed oversized fit. If you prefer a regular tailored fit, we suggest ordering one size smaller than your standard size. Exact centimeter and inch measurements for chest, shoulder width, and garment length are provided on every product page."
+  }
+]

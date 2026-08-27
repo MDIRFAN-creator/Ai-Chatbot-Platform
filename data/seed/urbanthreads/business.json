@@ -1,0 +1,17 @@
+{
+  "business": {
+    "business_id": "urbanthreads_001",
+    "name": "UrbanThreads",
+    "description": "UrbanThreads is a contemporary streetwear and premium casual apparel brand based in Mumbai, India. We design heavyweight hoodies, bomber jackets, graphic tees, and urban lifestyle accessories.",
+    "industry": "Apparel & Fashion",
+    "website": "https://urbanthreads.example.com",
+    "contact_email": "support@urbanthreads.example.com",
+    "contact_phone": "+91-9876543210",
+    "location": "Bandra West, Mumbai, Maharashtra 400050, India"
+  },
+  "assistant_settings": {
+    "assistant_name": "UrbanThreads Assistant",
+    "tone": "friendly, concise, and professional",
+    "welcome_message": "Hi! 👋 Welcome to UrbanThreads. Ask me anything about our streetwear collections, sizing, shipping, or returns!"
+  }
+}

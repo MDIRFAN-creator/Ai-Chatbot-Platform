@@ -514,7 +514,9 @@ def test_multi_tenant_isolation_products(db: DatabaseManager):
         business_id=biz_b.business_id,
     )
     assert cross_update is None
-    assert db.get_product(prod_a.product_id).name == "Alpha Shoes"
+    prod_orig = db.get_product(prod_a.product_id)
+    assert prod_orig is not None
+    assert prod_orig.name == "Alpha Shoes"
 
     # Cross-tenant delete attempt should fail
     cross_delete = db.delete_product(prod_a.product_id, business_id=biz_b.business_id)
@@ -537,8 +539,12 @@ def test_multi_tenant_isolation_policies_and_faqs(db: DatabaseManager):
     assert len(db.get_policies_by_business(biz_a.business_id)) == 1
     assert db.get_policies_by_business(biz_a.business_id)[0].content == "Alpha Ships in 1 Day"
     assert db.get_policy(pol_a.policy_id, business_id=biz_b.business_id) is None
-    assert db.get_policy_by_type(biz_a.business_id, "shipping").content == "Alpha Ships in 1 Day"
-    assert db.get_policy_by_type(biz_b.business_id, "shipping").content == "Beta Ships in 5 Days"
+    pol_ret_a = db.get_policy_by_type(biz_a.business_id, "shipping")
+    assert pol_ret_a is not None
+    assert pol_ret_a.content == "Alpha Ships in 1 Day"
+    pol_ret_b = db.get_policy_by_type(biz_b.business_id, "shipping")
+    assert pol_ret_b is not None
+    assert pol_ret_b.content == "Beta Ships in 5 Days"
 
     # FAQs tenant isolation
     assert len(db.get_faqs_by_business(biz_a.business_id)) == 1
